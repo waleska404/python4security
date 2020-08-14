@@ -4,7 +4,7 @@ import socket
 def main():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     host = 'localhost'
-    port = 5000
+    port = 80
     result = s.connect_ex((host, port))
     print('[+] Result is {}'.format(result))
     s.close()
