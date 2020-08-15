@@ -10,9 +10,12 @@ def main():
     scanner = Scanner(ip)
     scanner.scan(*port_range)
     for port in scanner.open_ports:
-        grabber = Grabber(ip, port)
-        print(grabber.read())
-        grabber.close()
+        try:
+            grabber = Grabber(ip, port)
+            print(grabber.read())
+            grabber.close()
+        except Exception as e:
+            print("Error", e)
 
 
 
